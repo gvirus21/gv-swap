@@ -77,5 +77,3 @@ const Header = () => {
 }
 
 export default Header
-
-//24:00
