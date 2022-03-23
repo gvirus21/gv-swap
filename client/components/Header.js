@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
 import { AiOutlineDown } from 'react-icons/ai'
 import { HiOutlineDotsVertical } from 'react-icons/hi'
 import ethLogo from '../assets/eth.png'
 import gvLogo from '../assets/uniswap.png'
+import { TransactionContext } from '../context/TransactionContext'
 
 const connectWallet = () => {}
 
@@ -24,6 +25,8 @@ const style = {
 
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState('swap')
+  const { connectWallet, currentAccount } = useContext(TransactionContext)
+
   return (
     <div className={style.wrapper}>
       <div className={style.headerLogo}>
